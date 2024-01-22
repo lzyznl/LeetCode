@@ -3,6 +3,7 @@
 using namespace std;
 
 /**
+ * author:lzy
  * 个人题解地址 https://leetcode.cn/problems/kLl5u1/solutions/2615378/liang-shu-zhi-he-ii-shu-ru-you-xu-shu-zu-xwe5/
 */
 vector<int> twoSum(vector<int> &numbers, int target)

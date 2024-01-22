@@ -19,6 +19,14 @@ vector<vector<int>> threeSum(vector<int> &nums)
         if(i>0&&nums[i]==nums[i-1]){
             continue;
         }
+        //如果排序之后最小的三个数相加大于0，那么之后全部都大于0，没有符合条件的数据
+        if((nums[i]+nums[i+1]+nums[i+2])>0){
+            break;
+        }
+        //如果最小的一个数，加上最大的两个数都小于0，那么可以直接跳过这个数的循环
+        if((nums[i]+nums[length-2]+nums[length-1])<0){
+            continue;
+        }
         int left=i+1;
         int right=length-1;
         while (left<right)
