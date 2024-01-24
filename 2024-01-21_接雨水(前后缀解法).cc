@@ -3,6 +3,10 @@
 #include <algorithm>
 using namespace std;
 
+/**
+ * author:lzy
+ * 个人题解:https://leetcode.cn/problems/trapping-rain-water/solutions/2618643/jie-yu-shui-by-elastic-hypatiadmy-2ij2
+*/
 int trap(vector<int> &height)
 {
     int length = height.size();
