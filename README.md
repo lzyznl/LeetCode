@@ -37,3 +37,7 @@ https://leetcode.cn/problems/longest-substring-without-repeating-characters/desc
 ##### 在排序数组中查找元素的第一个位置和最后一个位置
 
 https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/
+
+#####寻找峰值
+
+https://leetcode.cn/problems/find-peak-element/description/
