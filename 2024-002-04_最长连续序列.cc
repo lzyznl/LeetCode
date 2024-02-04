@@ -12,7 +12,7 @@ using namespace std;
  * 先对数组进行排序
  * 然后对排序后的数组进行去重
  * 去重完成之后遍历set，不断更新最长连续序列
- * 时间复杂度应该是O(NlogN)
+ * 时间复杂度应该是O(NlogN)的
 */
 int longestConsecutive1(vector<int> &nums)
 {

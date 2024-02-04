@@ -5,7 +5,7 @@
 #include <algorithm>
 using namespace std;
 /**
- * 两数之和，使用hash表
+ * 两数之和，使用hash表解决
 */
 vector<int> twoSum(vector<int> &nums, int target)
 {
