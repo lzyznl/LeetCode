@@ -40,10 +40,10 @@ vector<vector<string>> accountsMerge(vector<vector<string>> &accounts)
 
     //将email和对应的并查集索引以及名字建立关系
     for(auto& account:accounts){
-        string name = account[0];
+        string& name = account[0];
         int size = account.size();
         for(int i=1;i<size;++i){
-            string emailAccount = account[i];
+            string& emailAccount = account[i];
             if(!emailToIndex.count(emailAccount)){
                 emailToIndex[emailAccount]=index++;
                 emailToName[emailAccount]=name;
@@ -56,11 +56,11 @@ vector<vector<string>> accountsMerge(vector<vector<string>> &accounts)
 
     //使用并查集对账户进行合并
     for(auto& account:accounts){
-        string email1 = account[1];
+        string& email1 = account[1];
         int firstIndex = emailToIndex[email1];
         int size = account.size();
         for(int i=2;i<size;++i){
-            string email2 = account[i];
+            string& email2 = account[i];
             int nextEamilIndex = emailToIndex[email2];
             unions(s,firstIndex,nextEamilIndex);
         }
@@ -69,7 +69,7 @@ vector<vector<string>> accountsMerge(vector<vector<string>> &accounts)
     unordered_map<int,vector<string>> rootIndexToEmail;
     for(auto& [email,_]:emailToIndex){
         int rootIndex = find(s,emailToIndex[email]);
-        vector<string>account = rootIndexToEmail[rootIndex];
+        vector<string>& account = rootIndexToEmail[rootIndex];
         account.emplace_back(email);
         rootIndexToEmail[rootIndex]=account;
     }
@@ -77,7 +77,7 @@ vector<vector<string>> accountsMerge(vector<vector<string>> &accounts)
     vector<vector<string>> result;
     for(auto& [_,email]:rootIndexToEmail){
         sort(email.begin(),email.end());
-        string name = emailToName[email[0]];
+        string& name = emailToName[email[0]];
         vector<string> results;
         results.emplace_back(name);
         for(auto& emails:email){
