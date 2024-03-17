@@ -13,6 +13,9 @@ int networkDelayTime(vector<vector<int>> &times, int n, int k)
     for(auto& time:times){
         graph[time[0]-1][time[1]-1]=time[2];
     }
+    for(int i=0;i<n;++i){
+        graph[i][i]=0;
+    }
     //本问题中无需路径矩阵，只需要不断更新邻接矩阵即可
     for(int i=0;i<n;++i){
         for(int j=0;j<n;++j){
